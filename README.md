@@ -1,6 +1,6 @@
 # TrixOS
 
-**Ultimate Windows 10/11 Optimization Tool**
+**Windows 10/11 Optimization Tool**
 
 TrixOS is a complete suite of utilities for tuning a clean Windows installation. It provides three versions – **Standalone GUI**, **Cloud GUI** (loads tweaks from the internet), and **CLI** – all powered by the same 15 safe and balanced tweaks for privacy, performance, interface, and cleanup.
 
