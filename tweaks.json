@@ -1,15 +1,15 @@
 [
   {
     "id": "Telemetry",
-    "category": "Конфиденциальность",
-    "desc": "Отключить телеметрию (AllowTelemetry=0)",
+    "category": "Privacy",
+    "desc": "Disable telemetry (AllowTelemetry=0)",
     "cmd": ["reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection\" /v AllowTelemetry /t REG_DWORD /d 0 /f"],
     "revert": ["reg delete \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection\" /v AllowTelemetry /f 2>nul"]
   },
   {
     "id": "TelemetryServices",
-    "category": "Конфиденциальность",
-    "desc": "Отключить службы слежки (DiagTrack, dmwappushservice)",
+    "category": "Privacy",
+    "desc": "Disable tracking services (DiagTrack, dmwappushservice)",
     "cmd": [
       "sc stop DiagTrack",
       "sc config DiagTrack start= disabled",
@@ -25,57 +25,57 @@
   },
   {
     "id": "Cortana",
-    "category": "Конфиденциальность",
-    "desc": "Отключить Cortana и веб-поиск в меню Пуск",
+    "category": "Privacy",
+    "desc": "Disable Cortana and web search in Start menu",
     "cmd": ["reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search\" /v DisableWebSearch /t REG_DWORD /d 1 /f"],
     "revert": ["reg delete \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search\" /v DisableWebSearch /f 2>nul"]
   },
   {
     "id": "Ads",
-    "category": "Конфиденциальность",
-    "desc": "Отключить рекламу и рекомендации в проводнике",
+    "category": "Privacy",
+    "desc": "Disable ads and suggestions in File Explorer",
     "cmd": ["reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v ShowSyncProviderNotifications /t REG_DWORD /d 0 /f"],
     "revert": ["reg delete \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\" /v ShowSyncProviderNotifications /f 2>nul"]
   },
   {
     "id": "UpdateTelemetry",
-    "category": "Конфиденциальность",
-    "desc": "Отключить отправку отзывов об обновлениях",
+    "category": "Privacy",
+    "desc": "Disable update feedback notifications",
     "cmd": ["reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\UserProfileEngagement\" /v DoNotShowFeedbackNotifications /t REG_DWORD /d 1 /f"],
     "revert": ["reg delete \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\UserProfileEngagement\" /v DoNotShowFeedbackNotifications /f 2>nul"]
   },
   {
     "id": "PowerPlan",
-    "category": "Производительность",
-    "desc": "Активировать схему питания 'Высокая производительность'",
+    "category": "Performance",
+    "desc": "Activate 'High Performance' power plan",
     "cmd": ["powercfg -setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c"],
     "revert": ["powercfg -setactive 381b4222-f694-41f0-9685-ff5bb260df2e"]
   },
   {
     "id": "Animations",
-    "category": "Производительность",
-    "desc": "Оптимизировать визуальные эффекты (отключить анимации окон)",
+    "category": "Performance",
+    "desc": "Optimize visual effects (disable window animations)",
     "cmd": ["reg add \"HKCU\\Control Panel\\Desktop\" /v UserPreferencesMask /t REG_BINARY /d 9012038010000000 /f"],
     "revert": ["reg add \"HKCU\\Control Panel\\Desktop\" /v UserPreferencesMask /t REG_BINARY /d 9E12038010000000 /f"]
   },
   {
     "id": "BackgroundApps",
-    "category": "Производительность",
-    "desc": "Запретить приложениям работать в фоне",
+    "category": "Performance",
+    "desc": "Prevent apps from running in background",
     "cmd": ["reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\BackgroundAccessApplications\" /v GlobalUserDisabled /t REG_DWORD /d 1 /f"],
     "revert": ["reg delete \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\BackgroundAccessApplications\" /v GlobalUserDisabled /f 2>nul"]
   },
   {
     "id": "DisableTransparency",
-    "category": "Производительность",
-    "desc": "Отключить эффекты прозрачности (снижает нагрузку на GPU)",
+    "category": "Performance",
+    "desc": "Disable transparency effects (reduces GPU load)",
     "cmd": ["reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v EnableTransparency /t REG_DWORD /d 0 /f"],
     "revert": ["reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize\" /v EnableTransparency /t REG_DWORD /d 1 /f"]
   },
   {
     "id": "ContextMenu",
-    "category": "Интерфейс и Сеть",
-    "desc": "Классическое контекстное меню (только Win11)",
+    "category": "Interface & Network",
+    "desc": "Classic context menu (Windows 11 only)",
     "cmd": [
       "reg add \"HKCU\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32\" /ve /f",
       "taskkill /f /im explorer.exe",
@@ -89,15 +89,15 @@
   },
   {
     "id": "Notifications",
-    "category": "Интерфейс и Сеть",
-    "desc": "Отключить навязчивые системные уведомления",
+    "category": "Interface & Network",
+    "desc": "Disable intrusive system notifications",
     "cmd": ["reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\PushNotifications\" /v ToastEnabled /t REG_DWORD /d 0 /f"],
     "revert": ["reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\PushNotifications\" /v ToastEnabled /t REG_DWORD /d 1 /f"]
   },
   {
     "id": "SetDNSCloudflare",
-    "category": "Интерфейс и Сеть",
-    "desc": "Установить DNS Cloudflare (1.1.1.1, 1.0.0.1)",
+    "category": "Interface & Network",
+    "desc": "Set Cloudflare DNS (1.1.1.1, 1.0.0.1)",
     "cmd": [
       "powershell -Command \"$adapters = Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'}; foreach ($adapter in $adapters) { Set-DnsClientServerAddress -InterfaceIndex $adapter.InterfaceIndex -ServerAddresses ('1.1.1.1','1.0.0.1') }\""
     ],
@@ -107,15 +107,15 @@
   },
   {
     "id": "DisableFastStartup",
-    "category": "Интерфейс и Сеть",
-    "desc": "Отключить Быстрый запуск",
+    "category": "Interface & Network",
+    "desc": "Disable Fast Startup",
     "cmd": ["reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Power\" /v HiberbootEnabled /t REG_DWORD /d 0 /f"],
     "revert": ["reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Power\" /v HiberbootEnabled /t REG_DWORD /d 1 /f"]
   },
   {
     "id": "CleanTemp",
-    "category": "Очистка",
-    "desc": "Полная очистка папок Temp (пользовательская и системная)",
+    "category": "Cleanup",
+    "desc": "Clean user and system Temp folders",
     "cmd": [
       "del /f /s /q \"%TEMP%\\*\" 2>nul",
       "del /f /s /q \"%SystemRoot%\\Temp\\*\" 2>nul",
@@ -128,8 +128,8 @@
   },
   {
     "id": "CleanPrefetch",
-    "category": "Очистка",
-    "desc": "Очистка папки Prefetch (старые логи запуска)",
+    "category": "Cleanup",
+    "desc": "Clean Prefetch folder (old startup logs)",
     "cmd": ["del /f /s /q \"%SystemRoot%\\Prefetch\\*\" 2>nul"],
     "revert": []
   }
