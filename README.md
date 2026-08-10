@@ -50,6 +50,8 @@ The easiest way to get TrixOS is to download the installer from the [Releases](h
 
 Alternatively, you can download any `.exe` file directly and run it without installation.
 
+
+## RUN WITH ADMINISTRATION RULES
 ## Usage
 
 ### Standalone (Local GUI)
