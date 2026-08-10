@@ -13,23 +13,7 @@ TrixOS is a complete suite of utilities for tuning a clean Windows installation.
 - ✅ **Cloud version** – tweak database loaded from the internet, with offline cache as fallback.
 - ✅ **Dark theme** – easy on the eyes.
 
-## Screenshots
-
-### Standalone GUI – Dashboard
-
-<img width="2559" height="1526" alt="dashboard" src="https://github.com/user-attachments/assets/a692130a-29ba-49fb-8952-954c60bd280e" />
-
-### Standalone GUI – Tweaks
-
-<img width="2559" height="1529" alt="tweaks" src="https://github.com/user-attachments/assets/b4229cdd-1a96-401f-b59d-8c3398e0e3fc" />
-
-### Standalone GUI – BIOS Guide
-
-<img width="2559" height="1518" alt="bios" src="https://github.com/user-attachments/assets/25a66be8-b466-44f2-8d8d-fd4733aaf81d" />
-
-### CLI – Main Menu
-
-<img width="2557" height="1524" alt="cli" src="https://github.com/user-attachments/assets/50513a2f-632f-4915-aeca-52b4687c7010" />
+<img width="2559" height="1528" alt="image" src="https://github.com/user-attachments/assets/9e5f238e-2a5c-47e3-a4ce-b3fac3dc9629" />
 
 ## Download
 
