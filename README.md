@@ -13,7 +13,6 @@ All versions use the same 15 safe and balanced tweaks (Privacy, Performance, Int
 
 ---
 
-<img width="2559" height="1526" alt="gui" src="https://github.com/user-attachments/assets/82337e88-fe2a-4b13-8d23-07a35449093f" />
 
 ## Features
 
